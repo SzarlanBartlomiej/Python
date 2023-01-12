@@ -25,7 +25,7 @@ while True:
       print("Item was removed from the list ")
       print()
     else:
-      print("The item is not present in the list. a")
+      print("The item is not present in the list.")
       print()
   elif answer=="check":
     ListPrint()
