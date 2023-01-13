@@ -9,7 +9,7 @@ def cprint(c):
   elif c=="white":
     return ("\033[0m")
 def pprint():
-  os.system("clear")
+  os.system("cls")
   print(f"{cprint('red')}Current list of emails:"f"{cprint('white')}")
   print()
   for index in range(len(listofemails)):
@@ -50,4 +50,4 @@ while True:
     print()
     print("Wrong command")
   time.sleep(1)
-  os.system("clear")
+  os.system("cls")
