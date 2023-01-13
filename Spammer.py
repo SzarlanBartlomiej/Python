@@ -20,6 +20,14 @@ def pprint():
     os.system("clear")
   else:
     pprint()
+def spamstart():
+  for index in range (3):
+    os.system("cls")
+    print("LETS START SPAMMING")
+    print()
+    print("Email:"f"{index+1}\n","Welcome: "f"{listofemails[index]}\n","Plz buy our clothes "f"{listofemails[index]}",sep="")
+    time.sleep(4)
+    
 listofemails=[]
 while True:
   print("Spammer.inc","\n","Press a corresponding number in order to choose options from the menu:",sep="")
@@ -46,8 +54,10 @@ while True:
       print("Email is not yet added into database")
   elif menu=="3":
     pprint()
+  elif menu=="4":
+    spamstart()
   else:
     print()
     print("Wrong command")
   time.sleep(1)
-  os.system("cls")
+  os.system("clear")
