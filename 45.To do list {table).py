@@ -11,7 +11,7 @@ todolist=[]
 
 
 while True:
-  os.system("clear")
+  os.system("cls")
   print(f"{'Welcome to your to do list menu':^50}")
   print()
   print(f"{'Do you want to add task | view | edit | remove task | on the list ? '}")
@@ -30,13 +30,13 @@ while True:
     print(f"{'Item was added to your to do list':^30}")
     time.sleep(2)
   elif menu=="v":
-    os.system("clear")
+    os.system("cls")
     print()
     print(f"{'Welcome to to do list viewer. Choose the options below':^50}")
     print()
     view=input("Press 1 to view all\nPress 2 to view tasks by priority\n\n")
     if view=="1":
-      os.system("clear")
+      os.system("cls")
       print(f"{'These are your all tasks:':^50}")
       print()
       pprint()
@@ -48,7 +48,7 @@ while True:
         breakpoint
           
     elif view=="2":
-      os.system("clear")
+      os.system("cls")
       prio=input(f"{'what tasks do you want to view (low,medium,high)?':^50}\n:")
       print()
       print()
@@ -64,7 +64,7 @@ while True:
       if ret=="y":
          continue
   elif menu=="e":
-    os.system("clear")
+    os.system("cls")
     print(f"{'Welcome to tasks editor!':^50}")
     print()
     which=input("Which task do you want to edit?\n")
@@ -90,21 +90,24 @@ while True:
       if ret=="y":
          continue
   elif menu=="r":
-    os.system("clear")
+    os.system("cls")
     print(f"{'Tasks remover':^50}")
     print()
     rem=input("Enter the name of the task you want to remove\n")
     print()
-    counter=0
+    counter="True"
     for row in todolist:
       for item in row:
         if item==rem:
           print("Task has been found ")
-          ans=input("Are you sure you want to remove the item?:y/n\n")
-          if ans=="y":
-            todolist.remove(row)
-            print()
-            print("Task succesfully removed")
-            ret=input("Do you want to return to the main menu?:y/n\n").strip().lower()
-            if ret=="y":
-              continue
+          todolist.remove(row)
+          print()
+          print("Task succesfully removed")
+    ret=input("Do you want to return to the main menu?:y/n\n").strip().lower()
+    if ret=="y":
+      continue
+  else:
+    print()
+    print("Wrong command")
+    time.sleep(2)
+    continue
